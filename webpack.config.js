@@ -10,18 +10,24 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
     ],
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+
+    path: path.resolve(__dirname, '../licenseplate/js'),
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    writeToDisk: true,
+    contentBase: path.resolve(__dirname, '../licenseplate/js'),
     hot: true,
   },
 };
