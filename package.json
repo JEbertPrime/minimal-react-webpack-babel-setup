@@ -21,9 +21,11 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "react-dom": "^17.0.1",
+    "react-gsap": "^3.2.1",
     "react-icons": "^4.2.0",
+    "react-scrollmagic": "^2.3.0",
     "reactstrap": "^8.9.0",
     "styled-components": "^5.3.0"
   }

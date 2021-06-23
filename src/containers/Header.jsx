@@ -18,9 +18,10 @@ const Link = styled.a`
     }
 `
 const StyledRow = styled(Row)`
-    padding:2rem;
+    padding:1rem 0rem 0rem 0rem;
     `
 const ProgressBar = styled.hr`
+position:absolute;
      margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
@@ -51,7 +52,7 @@ export default function Header (props){
                 <Col>
                 <SectionHeader section={section[0]} color={section[2]}>
                 <Link href={`#${section[0]}`}>
-                    <h3>{section[1]}</h3>
+                    <h4>{section[1]}</h4>
                     </Link>
                 </SectionHeader>
                 </Col>
@@ -63,6 +64,7 @@ export default function Header (props){
 
         </Container>
         <ProgressBar width={scrollPercent}/>
+        <hr/>
         </Sticky>
     )
 }

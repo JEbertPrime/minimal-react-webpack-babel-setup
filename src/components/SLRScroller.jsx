@@ -1,7 +1,6 @@
 import { Row, Col } from "reactstrap";
 import { Controller, Scene } from "react-scrollmagic";
 import {Timeline, Tween} from 'react-gsap'
-import Chart from "./Chart.jsx";
 import React from 'react'
 
 import styled from "styled-components";
@@ -20,18 +19,17 @@ var ScrollItemBox = styled.div`
   padding: 2rem 2rem 1rem 2rem;
   width: max-content;
   max-width: calc(99vw - 2rem);
-
   margin: auto;
 `;
-export default function ChartSection(props) {
+export default function SLRScroller(props) {
   return (
-    <Row>
+      <>
+    <Row style={{backgroundColor:'#1e698d'}}>
       <Col>
         <Controller>
           <Scene pin duration={5000} offset={300}>
             {progress=>{
                 return <div>
-                <Chart progress={progress} />
                 <Timeline
               playState={"stop"}
               totalProgress={progress}
@@ -73,5 +71,7 @@ export default function ChartSection(props) {
         </Controller>
       </Col>
     </Row>
+    
+    </>
   );
 }

@@ -8,7 +8,6 @@ const Wrapper = styled.div`
 export default function SectionHeader(props){
     return(
         <Wrapper>
-            <SectionIcon {...props} />
             {props.children}
         </Wrapper>
         
