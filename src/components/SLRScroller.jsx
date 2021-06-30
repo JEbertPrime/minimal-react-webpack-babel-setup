@@ -1,7 +1,8 @@
 import { Row, Col } from "reactstrap";
 import { Controller, Scene } from "react-scrollmagic";
 import {Timeline, Tween} from 'react-gsap'
-import React from 'react'
+import SLRGraphic from './SLRGraphic.jsx'
+import React, {useState} from 'react'
 
 import styled from "styled-components";
 var ScrollItem = styled.div`
@@ -22,14 +23,16 @@ var ScrollItemBox = styled.div`
   margin: auto;
 `;
 export default function SLRScroller(props) {
+  var [level, setLevel] = useState(0)
   return (
       <>
-    <Row style={{backgroundColor:'#1e698d'}}>
-      <Col>
+    <Row style={{backgroundColor:'#227c9d'}}>
+    
+      <Col style={{padding: '0px'}}>
         <Controller>
           <Scene pin duration={5000} offset={300}>
             {progress=>{
-                return <div>
+                return <div style={{backgroundImage:`url(/wp-content/uploads/2021/06/layer_${Math.floor(progress*6)}.png`, backgroundSize:'cover', height: 'calc(100vh - 99px)', backgroundPosition:'center'}}>
                 <Timeline
               playState={"stop"}
               totalProgress={progress}

@@ -48,7 +48,7 @@ export default function Header (props){
         <Sticky>
         <Container  style={{padding:'0px'}}>
         <StyledRow>
-            {[['coast', 'Sea Level Rise',' #00147D'], ['heat', 'Extreme Heat', '#CE2028'], ['ecosystem', 'Threatened Ecosystems',' #03C03D']].map(section=>(
+            {[['coast', 'Sea Level Rise',' #00147D'], ['heat', 'Extreme Heat', '#CE2028'], ['ecosystem', 'Threatened Ecosystems',' #03C03D'], ['emissions','Cutting Emissions', '#000000'], ['resilience', 'Building Resilience', '#000000']].map(section=>(
                 <Col>
                 <SectionHeader section={section[0]} color={section[2]}>
                 <Link href={`#${section[0]}`}>

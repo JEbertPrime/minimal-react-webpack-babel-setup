@@ -16,8 +16,11 @@ color:#FC801E;
 export default function SeaLevelRise(props){
     var [level, changeLevel] = useState(0)
     return(
-        <Container fluid id='coast' style={{marginTop:'-15px'}}>
-            
+        <Container fluid  style={{marginTop:'-15px'}}>
+            <a id='coast' style=
+        {{position:'relative',
+        top: '-200px'}}
+    />
             <Row style={{padding:'10em 0em 10em 0em', backgroundColor:'#227c9d'}}>
                 <Col style={{position:'sticky', top:'100px', color:'#fef9ef'}}>
                     <h2 className='text-center'>
@@ -29,10 +32,10 @@ export default function SeaLevelRise(props){
                     
                 </Col>
                 </Row>
-                <SLRScroller backgroundHeight={800}>
-                <h2>Coastal communities are building resilience</h2>
-                    <p>In Savannah, coastal communities are building resilience.</p>
-                    <ReadMore href='http://stories.georgiaclimateproject.org/?region=Coastal%20Georgia&theme=Solutions:%20Adaptation'>Read More </ReadMore>
+                <SLRScroller backgroundHeight={400}>
+                <p>An additional increase of 4 to 6.3 feet is projected by 2100.</p>
+                    <p>These changes can increase inequity, reduce property values, threaten infrastructure, damage ecosystems, and make us more vulnerable to hurricane damage. </p>
+                    
                 </SLRScroller>
             
         </Container>
