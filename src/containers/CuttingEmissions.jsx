@@ -9,7 +9,7 @@ const Link = styled.a`
 `;
 export default function CuttingEmissions() {
   return (
-    <Container fluid style={{ backgroundColor: '#FFFDED' }}>
+    <Container fluid style={{ backgroundColor: 'white' }}>
     <a id='emissions' style=
         {{position:'relative',
         top: '-200px'}}

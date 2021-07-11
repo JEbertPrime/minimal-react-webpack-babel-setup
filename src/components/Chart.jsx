@@ -16,7 +16,7 @@ export default function Graph({ progress }) {
     var canvas = canvasRef.current
     // Actual width and height. No idea if clienWidth would be a better option..?
     canvas.width = window.innerWidth - 50
-    canvas.height = canvas.width*.75
+    canvas.height = canvas.width*.25
     var width = canvas.offsetWidth
     var height = canvas.offsetHeight
     // select the canvas element created in the html.
@@ -37,12 +37,10 @@ console.log(pathGenerator)
 // ctx.fillRect(0, 0, width, height);
 
 // Load external data and boot
-    d3.json("/wp-content/uploads/2021/06/dekalb_cropped_simple.geojson").then( function(data){
+    d3.json("/wp-content/uploads/2021/07/dekalb_cropped_simple.geojson").then( function(data){
       // initialize the path
       setRoadData(data)
-      ctx.beginPath();
-  ctx.arc(width/2, height/4, progress*100, 0, Math.PI * 2, true);
-  ctx.clip();
+      
       ctx.beginPath();
 
       // Got the positions of the path
@@ -51,7 +49,7 @@ console.log(pathGenerator)
       // Fill the paths
       
       // Add stroke
-      ctx.strokeStyle = "rgba(140, 140, 140,.8)";
+      ctx.strokeStyle = "rgba(255, 255, 255, 1.0)";
       ctx.stroke()
 
     })
@@ -61,7 +59,7 @@ console.log(pathGenerator)
     var canvas = canvasRef.current
     
     canvas.width = window.innerWidth - 50
-    canvas.height = canvas.width*.85
+    canvas.height = canvas.width*.4
     var width = canvas.offsetWidth
     var height = canvas.offsetHeight
     var projection = d3.geoAlbers()

@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 export default function Resilience(){
     return (
-        <Container fluid style={{ backgroundColor: '#FFFDED' }}>
+        <Container fluid style={{ backgroundColor: 'white' }}>
             <Row>
                 
                 <Col className='center'>

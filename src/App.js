@@ -11,6 +11,7 @@ const App = ({ title }) => (
         <Header />
         <SeaLevelRise/>
         <Heat />
+        <Ecosystem />
         <CuttingEmissions />
         <Resilience />
         <MailForm />

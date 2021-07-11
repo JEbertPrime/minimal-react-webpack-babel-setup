@@ -6,9 +6,8 @@ import MountainThree from  './mountain-3.svg'
 import TreeOne from './tree-1.svg'
 
 const SVGWrap = styled.div`
-    position:sticky;
-    top:calc(100vh - ${props=>props.top}em);
-    margin-top:-70px;
+    position:absolute;
+    bottom:0px;
     ${props=>{
         return props.left ? `
                              margin-left: ${props.left}em;   `
@@ -20,7 +19,7 @@ const SVGWrap = styled.div`
     z-index:-1
 `
 const Wrapper = styled.div`
-    clip-path: inset(0);
+height:100%;
 `
 export default function SVGBackground(){
     
@@ -34,7 +33,16 @@ return(
         </SVGWrap>
         
         <SVGWrap top={21} right={35}>
-            <TreeOne height='20em' fill='#228B22' />
+            <TreeOne height='16em' fill='#1F5813' />
+        </SVGWrap>
+        <SVGWrap top={21} right={27}>
+            <TreeOne height='12em' fill='#1F5813' />
+        </SVGWrap>
+        <SVGWrap top={21} left={35}>
+            <TreeOne height='16em' fill='#1F5813' />
+        </SVGWrap>
+        <SVGWrap top={21} left={27}>
+            <TreeOne height='12em' fill='#1F5813' />
         </SVGWrap>
         </Wrapper>
 )
