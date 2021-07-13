@@ -5,45 +5,29 @@ import MountainTwo from  './mountain-2.svg'
 import MountainThree from  './mountain-3.svg'
 import TreeOne from './tree-1.svg'
 
-const SVGWrap = styled.div`
-    position:absolute;
-    bottom:0px;
-    ${props=>{
-        return props.left ? `
-                             margin-left: ${props.left}em;   `
-                             :
-                             props.right ? `margin-left:calc(100vw - ${props.right}em);
-                             `
-                             :null
-    }}
-    z-index:-1
+const SVGWrap = styled.g`
+    
 `
-const Wrapper = styled.div`
-height:100%;
+const Wrapper = styled.svg`
+width:120%;
+max-width:1200px;
+margin-left:auto;
+margin-right:auto
+
 `
 export default function SVGBackground(){
     
 return(
-    <Wrapper>
-        <SVGWrap top={20} left={0}>
-            <MountainOne width='40em'  />
-        </SVGWrap>
-        <SVGWrap top={20} right={43}>
-            <MountainTwo width='40em' />
-        </SVGWrap>
+    <Wrapper viewBox='0 0 1200 400'>
+    <g transform='translate(50,100)' >
+            <MountainOne x='300' width='50em'   />
+            <MountainTwo x='-150' width='40em' />
         
-        <SVGWrap top={21} right={35}>
-            <TreeOne height='16em' fill='#1F5813' />
-        </SVGWrap>
-        <SVGWrap top={21} right={27}>
-            <TreeOne height='12em' fill='#1F5813' />
-        </SVGWrap>
-        <SVGWrap top={21} left={35}>
-            <TreeOne height='16em' fill='#1F5813' />
-        </SVGWrap>
-        <SVGWrap top={21} left={27}>
-            <TreeOne height='12em' fill='#1F5813' />
-        </SVGWrap>
+            <TreeOne y='45' x='80' height='16em' fill='#1F5813' />
+            <TreeOne y='110' x='-200' height='12em' fill='#1F5813' />
+            <TreeOne y='45' x='-250' height='16em' fill='#1F5813' />
+            <TreeOne y='110' height='12em' fill='#1F5813' />
+            </g>
         </Wrapper>
 )
 }

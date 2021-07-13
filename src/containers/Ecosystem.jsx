@@ -3,26 +3,30 @@ import SVGBackground from '../components/SVGBackground'
 import {Container, Row, Col, Collapse} from 'reactstrap'
 import styled from 'styled-components'
 const BackgroundWrap = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
     position: absolute;
     height:calc(90vh - 99px);
+    width: 100%;
     min-height:400px;
-    z-index: 0
+    z-index: 0;
+    overflow-x:hidden;
 `
 export default function Ecosystem(){
     var [collapse, setCollapse] = useState(false)
     return(
         <>
-        <Container fluid  style={{ background:' rgb(86, 144, 58)'}}>
+        <Container fluid  style={{ background:' rgb(86, 144, 58)', overflowX:'hidden'}}>
         <a id='ecosystem' style=
         {{position:'relative',
         top: '-200px'}}
     />
             <Row style={{ color:'#fef9ef', minHeight:'400px', height:'calc(90vh - 99px)'}}>
                 <Col md='3'></Col>
-        <Col className='text-center' style={{paddingTop:'10em'}}>
+        <Col className='text-center' style={{paddingTop:'15vw'}}>
         <h2>Georgia’s unique ecosystems are under threat.</h2>
         <p>
-        Georgia’s is home to species found nowhere else.
+        Georgia is home to species found nowhere else.
 
         </p>
         <p>

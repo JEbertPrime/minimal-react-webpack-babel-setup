@@ -35,7 +35,7 @@ export default function SeaLevelRise(props) {
                     top: '-200px'
                 }}
             />
-            <Row style={{ padding: '10em 0em 0em 0em', height: 'calc(100vh - 99px)', }}>
+            <Row style={{ padding: '5em 0em 0em 0em', height: 'calc(100vh - 99px)', minHeight:'max-content' }}>
                 <Col md='3'/>
                 
                 <Col md='4' style={{  color: '#fef9ef' }}>

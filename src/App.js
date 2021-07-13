@@ -7,14 +7,17 @@ import MailForm from './components/MailForm.jsx'
 import Resilience from './containers/BuildingResilience.jsx'
 import Ecosystem from './containers/Ecosystem.jsx'
 const App = ({ title }) => (
-    <div>
+    <div >
         <Header />
+        <main style={{overflowX:'hidden'}}>
         <SeaLevelRise/>
         <Heat />
         <Ecosystem />
         <CuttingEmissions />
         <Resilience />
         <MailForm />
+        </main>
+        
     </div>
 );
 

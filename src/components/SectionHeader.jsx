@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 `
 export default function SectionHeader(props){
     return(
-        <Wrapper section={props.section}>
+        <Wrapper section={props.section} active={props.active}>
             {props.children}
         </Wrapper>
         

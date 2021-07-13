@@ -2,12 +2,20 @@ import React, {useEffect, useState} from 'react'
 import SectionIcon from '../components/SectionIcon.jsx'
 import SectionHeader from '../components/SectionHeader.jsx'
 import styled from 'styled-components'
+import {device} from '../media/devices'
 import {Container, Row, Col} from 'reactstrap'
 const Sticky = styled.div`
     position:sticky;
-    top:50px;
+    @media ${device.mobileS}{
+        top: 10px;
+    }
+    @media ${device.tablet}{
+        top: 50px
+    }
     background:white;
-    z-index:1
+    z-index:1;
+    overflow-x:hidden;
+    overflow-y:hidden
 `
 const Link = styled.a`
     text-decoration:none;
@@ -22,16 +30,22 @@ const StyledRow = styled(Row)`
     `
 const ProgressBar = styled.hr`
 position:absolute;
-     margin-top: 1rem;
-  margin-bottom: 1rem;
   border: 0;
   border-top: 4px solid #FC801E;
+  margin-top:6px;
   width:${props=> props.width + "%"};
   max-width: 99.9%;
   transition: width .1s;
   margin-left: 0px;
 `
-
+const HeaderCol = styled(Col)`
+    @media ${device.mobileS}{
+        display: ${props=>props.inView ? 'block': 'none'};
+    }
+    @media ${device.tablet}{
+        display: block;
+    }
+`
 export default function Header (props){
     var [scrollPercent, changeScrollPercent] = useState(0)
      
@@ -57,13 +71,13 @@ export default function Header (props){
             </Row>
         <StyledRow>
             {[['coast', 'Sea Level Rise',' #00147D'], ['heat', 'Extreme Heat', '#CE2028'], ['ecosystem', 'Threatened Ecosystems',' #03C03D'], ['emissions','Cutting Emissions', '#000000'], ['resilience', 'Building Resilience', '#000000']].map((section, i)=>(
-                <Col className='my-auto' style={{borderRight: section[0]=='ecosystem' ? '1px solid grey' : ''}}>
-                <SectionHeader section={section[0]} color={section[2]}>
+                <HeaderCol className='my-auto' style={{borderRight: section[0]=='ecosystem' ? '1px solid grey' : '',}} inView={scrollPercent>i*20 && scrollPercent<(i+1)*20}>
+                <SectionHeader section={section[0]} color={section[2]}  >
                 <Link href={`#${section[0]}`} active={scrollPercent>i*20 && scrollPercent<(i+1)*20}>
                     <h4>{section[1]}</h4>
                     </Link>
                 </SectionHeader>
-                </Col>
+                </HeaderCol>
                 
             ))}
             
@@ -72,7 +86,7 @@ export default function Header (props){
 
         </Container>
         <ProgressBar width={scrollPercent}/>
-        <hr/>
+        <hr style={{marginBottom:'0px'}}/>
         </Sticky>
     )
 }
