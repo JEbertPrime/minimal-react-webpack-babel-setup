@@ -5,6 +5,7 @@ export default function Graph({ progress, windowWidth }) {
   var canvasRef = useRef(null);
   var percent = Math.floor(progress * 100);
   var myChart = useRef(null);
+  var [scale, setScale] = useState(750000)
   var [roadData, setRoadData] = useState(null)
   var [rideData, setRideData] = useState(null)
   var [locations, setLocations] = useState(null)
@@ -79,7 +80,7 @@ var customBase = document.createElement('custom');
     var projection = d3.geoAlbers()
     .center([0, 33.76])
     .rotate([84.299605, 0])
-    .scale(750000 * (width/800))
+    .scale(scale * (width/800))
     .translate([width/2, 200]);
     
     const pathGenerator = d3.geoPath(projection, ctx);
@@ -128,7 +129,13 @@ var customBase = document.createElement('custom');
     if(ctx){
     animate()
   }
-  }, [progress, windowWidth])
+  }, [progress, windowWidth, scale])
   
-  return <canvas style={{position:'static', left:'0px', top:'0px'}} width='100' ref={canvasRef} />;
+  return (
+    <>
+  <input type='range' min='400000' max='750000' onChange={(e)=>{setScale(parseInt(e.target.value))}} />
+  <canvas style={{position:'static', left:'0px', top:'0px'}} width='100' ref={canvasRef} />
+  </>
+  )
+  ;
 }
