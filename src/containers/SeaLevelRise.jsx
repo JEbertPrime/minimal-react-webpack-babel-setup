@@ -2,6 +2,7 @@ import { Container, Row, Col, Collapse } from 'reactstrap'
 import ControlSlider from '../components/ControlSlider.jsx'
 import SLRGraphic from '../components/SLRGraphic.jsx'
 import SLRScroller from '../components/SLRScroller.jsx'
+import OrangeHeader from '../components/OrangeHeader.jsx'
 import styled from 'styled-components'
 import React, { useState, useEffect } from 'react'
 const StyledContainer = styled(Container)`
@@ -28,43 +29,35 @@ export default function SeaLevelRise(props) {
     })
     return (
         <>
-        <Container fluid style={{ marginTop: '-15px', backgroundColor: '#227c9d',backgroundImage: `url('wp-content/themes/licenseplate/assets/images/layer_${level % 7}.png')`, backgroundSize: 'cover',  backgroundPosition: 'top center' }}>
+        <Container fluid style={{ marginTop: '-15px', backgroundColor: '#227c9d', position: 'relative', overflowX: 'hidden' , zIndex: '-1'}}>
             <a id='coast' style=
                 {{
                     position: 'relative',
                     top: '-200px'
                 }}
             />
-            <Row style={{ padding: '5em 0em 0em 0em', height: 'calc(100vh - 99px)', minHeight:'max-content' }}>
-                <Col md='3'/>
+            <Row style={{ padding: '5em 0em 0em 0em', height: 'calc(100vh - 99px)', minHeight:'max-content', zIndex:10 }}>
                 
-                <Col md='4' style={{  color: '#fef9ef' }}>
-                    <h2 className='text-center'>
-                        Our coasts are flooding.
-                    </h2>
+                <Col md='6' style={{  color: '#fef9ef' }}>
+                    <OrangeHeader >
+                        1. Our coasts are flooding.
+                    </OrangeHeader>
 
-                    <p className='text-center'>
+                    <p >
                         Coastal Georgia has seen nearly one foot of sea level rise since 1935.
                     </p>
-                    <p className='center'>An additional increase of 4 to 6.3 feet is projected by 2100.</p>
-                    <p className='center'>These changes can increase inequity, reduce property values, threaten infrastructure, damage ecosystems, and make us more vulnerable to hurricane damage. 
+                    <p >An additional increase of 4 to 6.3 feet is projected by 2100.</p>
+                    <p >These changes can increase inequity, reduce property values, threaten infrastructure, damage ecosystems, and make us more vulnerable to hurricane damage. 
 </p>
 
                 </Col>
-                <Col style={{  color: '#fef9ef', textAlign:'center', flexDirection:'row' }} md='2'>
-                <h1 className='center'>{level%7} ft.</h1>
-                <input  className='mx-center vranger' type='range' step='1' max='6' min='0' value={level%7} onChange={(e)=>{
-                    setUserControlled(true)
-                    setLevel(e.target.value)}}/>
-                </Col>
+                <Col md='3'/>
+
                 <Col md='2'/>
             </Row>
             
-            <div>
-                    <h3 style={{color:'white', marginBlockEnd:'0px', cursor:'pointer'}} onClick={()=>setCollapse(!collapse)}className='center'>Read More</h3>
-                    
-            </div>
-
+            
+                <img src={`wp-content/themes/licenseplate/assets/images/layer_${level % 7}.png`} alt={`Sea level rise of 0-6 feet in Savannah, GA`} style={{position: 'absolute', top: '0px', right:'0px', height: '105%', zIndex: -1, transform: 'rotate(180deg)'}} />
         </Container>
         <Collapse isOpen={collapse}>
             <Container>

@@ -5,7 +5,7 @@ export default function Graph({ progress, windowWidth }) {
   var canvasRef = useRef(null);
   var percent = Math.floor(progress * 100);
   var myChart = useRef(null);
-  var [scale, setScale] = useState(750000)
+  var [scale, setScale] = useState(300000)
   var [roadData, setRoadData] = useState(null)
   var [rideData, setRideData] = useState(null)
   var [locations, setLocations] = useState(null)
@@ -27,7 +27,7 @@ export default function Graph({ progress, windowWidth }) {
     var projection = d3.geoAlbers()
     .center([0, 33.777])
     .rotate([84.299605, 0])
-    .scale(750000)
+    .scale(300000)
     .translate([width/2, height/4]);
 // Create a path generator.
 
@@ -42,7 +42,7 @@ var customBase = document.createElement('custom');
 // ctx.fillRect(0, 0, width, height);
 
 // Load external data and boot
-    Promise.all([d3.json("/wp-content/themes/licenseplate/assets/data/dekalb_cropped_simple.geojson"), d3.json('/wp-content/themes/licenseplate/assets/data/ride_collection_5s.geojson')]).then( function([roads, ride]){
+    Promise.all([d3.json("/wp-content/themes/licenseplate/assets/data/simpler.geojson"), d3.json('/wp-content/themes/licenseplate/assets/data/ride_collection_5s.geojson')]).then( function([roads, ride]){
       // initialize the path
       setRoadData(roads)
       
@@ -73,8 +73,8 @@ var customBase = document.createElement('custom');
   }, []);
   useEffect(()=>{
     var canvas = canvasRef.current
-    canvas.width = window.innerWidth - 50
-    canvas.height = canvas.width*.4
+    canvas.width = window.innerWidth
+    canvas.height = canvas.width*.5
     var width = canvas.offsetWidth
     var height = canvas.offsetHeight
     var projection = d3.geoAlbers()
@@ -133,7 +133,6 @@ var customBase = document.createElement('custom');
   
   return (
     <>
-  <input type='range' min='400000' max='750000' onChange={(e)=>{setScale(parseInt(e.target.value))}} />
   <canvas style={{position:'static', left:'0px', top:'0px'}} width='100' ref={canvasRef} />
   </>
   )
