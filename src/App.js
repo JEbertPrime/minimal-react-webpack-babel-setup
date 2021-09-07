@@ -11,12 +11,11 @@ const App = ({ title }) => (
         <Header />
         <main style={{overflowX:'hidden'}}>
         <SeaLevelRise/>
-        <Heat />
         <Ecosystem />
+        <Heat />
         <CuttingEmissions />
         <Resilience />
-        <MailForm />
-        </main>
+         </main>
         
     </div>
 );

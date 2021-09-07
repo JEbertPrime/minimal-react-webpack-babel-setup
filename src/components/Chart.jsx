@@ -5,7 +5,7 @@ export default function Graph({ progress, windowWidth }) {
   var canvasRef = useRef(null);
   var percent = Math.floor(progress * 100);
   var myChart = useRef(null);
-  var [scale, setScale] = useState(300000)
+  var [scale, setScale] = useState(400000)
   var [roadData, setRoadData] = useState(null)
   var [rideData, setRideData] = useState(null)
   var [locations, setLocations] = useState(null)
@@ -19,15 +19,15 @@ export default function Graph({ progress, windowWidth }) {
   useEffect(() => {
     var canvas = canvasRef.current
     // Actual width and height. No idea if clienWidth would be a better option..?
-    canvas.width = window.innerWidth - 50
-    canvas.height = canvas.width*.25
+    canvas.width = window.innerWidth 
+    canvas.height = canvas.parentNode.offsetHeight
     var width = canvas.offsetWidth
     var height = canvas.offsetHeight
     // select the canvas element created in the html.
     var projection = d3.geoAlbers()
     .center([0, 33.777])
     .rotate([84.299605, 0])
-    .scale(300000)
+    .scale(400000)
     .translate([width/2, height/4]);
 // Create a path generator.
 
@@ -74,13 +74,13 @@ var customBase = document.createElement('custom');
   useEffect(()=>{
     var canvas = canvasRef.current
     canvas.width = window.innerWidth
-    canvas.height = canvas.width*.5
+    canvas.height = canvas.parentNode.offsetHeight
     var width = canvas.offsetWidth
     var height = canvas.offsetHeight
     var projection = d3.geoAlbers()
     .center([0, 33.76])
     .rotate([84.299605, 0])
-    .scale(scale * (width/800))
+    .scale(scale * (width/900))
     .translate([width/2, 200]);
     
     const pathGenerator = d3.geoPath(projection, ctx);

@@ -1,71 +1,60 @@
-import React from 'react'
-import { Container, Row, Col,  Card, CardTitle, CardText, CardImg, CardImgOverlay } from 'reactstrap';
+import React from 'react';
+import {  Row, Col } from 'reactstrap';
+import styled from 'styled-components';
+import OrangeHeader from '../components/OrangeHeader.jsx'
+import Container from '../components/SectionContainer'
 
-export default function Resilience(){
-    return (
-        <Container fluid style={{ backgroundColor: 'white' }}>
-            <Row>
-                
-                <Col className='center'>
-                    <h2>Georgians are working to become more climate-resilient.</h2>
-                    <hr/>
-                    <p>Across the state, Georgians are taking concrete steps to minimize the risks of climate damages and build a just and resilient future. </p>
-                </Col>
-            </Row>
-            <Row style={{marginTop:'20px', paddingBottom:'20px'}}>
-                <Col md='6' style={{borderRight: '1px solid grey', paddingRight:'20px', paddingTop:'10px'}}>
-                    <Row style={{textShadow:'1px 1px 2px black'}}>
-                    <Col md='6' style={{marginTop:'10px'}}>
-                            <Card center style={{background:'url("https://www.georgiaclimateproject.org/stories/wp-content/uploads/sites/9/2021/04/GCP-Website-Updates-Custom-Dimensions.png")', backgroundSize:'cover', color:'white', fontFamily:'Open Sans Condensed', padding:'25px'}}>
-                                <div>
-                                    <h5>
-                                        Climate On Our Minds: Biking with Dope Pedalers
-                                    </h5>
-                                    <h6>Atlanta</h6>
-                                </div>
-                                
-                            </Card>
-                        </Col>
-                        <Col md='6' style={{marginTop:'10px'}}>
-                            <Card center style={{background:'url("https://www.georgiaclimateproject.org/stories/wp-content/uploads/sites/9/2021/04/Nicole.png")', backgroundSize:'cover', color:'white', fontFamily:'Open Sans Condensed', padding:'25px'}}>
-                                <div>
-                                    <h5>
-                                        Climate On Our Minds: Biking with Dope Pedalers
-                                    </h5>
-                                    <h6>Atlanta</h6>
-                                </div>
-                                
-                            </Card>
-                        </Col>
-                        <Col md='6' style={{marginTop:'10px'}}>
-                            <Card center style={{background:'url("https://www.georgiaclimateproject.org/stories/wp-content/uploads/sites/9/2021/05/Capture.png")', backgroundSize:'cover', color:'white', fontFamily:'Open Sans Condensed', padding:'25px'}}>
-                                <div>
-                                    <h5>
-                                        Climate On Our Minds: Biking with Dope Pedalers
-                                    </h5>
-                                    <h6>Atlanta</h6>
-                                </div>
-                                
-                            </Card>
-                        </Col>
-                        <Col md='6' style={{marginTop:'10px'}}>
-                            <Card center style={{background:'url("https://www.georgiaclimateproject.org/stories/wp-content/uploads/sites/9/2021/05/Screen-Shot-2019-10-28-at-9_23_48-AM.png")', backgroundSize:'cover', color:'white', fontFamily:'Open Sans Condensed', padding:'25px'}}>
-                                <div>
-                                    <h5>
-                                        Climate On Our Minds: Biking with Dope Pedalers
-                                    </h5>
-                                    <h6>Atlanta</h6>
-                                </div>
-                                
-                            </Card>
-                        </Col>
-                    </Row>
-                    <p className='center'><a style={{color:'#FC801E'}}href='stories.georgiaclimateproject.org'>View more climate stories ></a></p>
-                </Col>
-                <Col>
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/mbri3GlZwTw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </Col>
-            </Row>
-        </Container>
-    )
+const Link = styled.a`
+  color: white;
+  text-decoration:underline;
+  &:hover {
+    color: #E07000;
+  }
+`;
+const GradientDiv = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  @media (max-width: 768px) {
+    background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  }
+  z-index: 0;
+`;
+export default function CuttingEmissions() {
+  return (
+    <Container fluid style={{ backgroundColor: 'white', backgroundImage:'url(wp-content/themes/licenseplate/assets/images/resilient.jpg)', backgroundSize:'cover', marginTop:'-6px',backgroundPosition: 'center' , position:'relative'}}>
+    <a id='emissions' style=
+        {{position:'relative',
+        top: '-200px'}}
+    />
+      <Row style={{ paddingTop: '5em', paddingBottom: '30px', height:'calc(90vh - 99px)', zIndex:'1', position:'relative' }}>
+      <Col md={{size:6, order:1}}  xs={{size:1, order:2}} />
+        <Col md={{size:6, order:2}}  xs={{size:12, order:1}} style={{color:'white'}}>
+        <OrangeHeader >
+        5. Georgians are working to become more climate-resilient.
+        </OrangeHeader>
+        <p>Across the state, Georgians are taking concrete steps to minimize the risks of climate damages and build a just and resilient future.
+
+</p>
+<p>
+Learn more about <Link href=' https://www.georgiaclimateproject.org/portal/' target='_blank'>resiliency efforts</Link> underway in the state. 
+</p>
+        </Col>
+       
+      </Row>
+      <GradientDiv/>
+
+    </Container>
+  );
 }

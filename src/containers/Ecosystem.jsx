@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import SVGBackground from '../components/SVGBackground'
 import OrangeHeader from '../components/OrangeHeader'
+import EcoContainer from '../components/SectionContainer'
+import MoreInfo from '../components/MoreInformation'
 import {Container, Row, Col, Collapse} from 'reactstrap'
 import styled from 'styled-components'
 const BackgroundWrap = styled.div`
@@ -13,30 +15,49 @@ const BackgroundWrap = styled.div`
     z-index: 0;
     overflow-x:hidden;
 `
+
 const BackgroundContainer = styled.div`
-position: relative;
+position: absolute;
 top: 0px;
 left: 0px;
 width:100%;
 z-index: -1;
 `
 const AutoVideo = styled.video`
-width: 100%;
-height: calc(90vh - 99px);
-object-fit: cover
+object-fit: cover;
+min-width: 100%;
+@media(min-width:768px){
+    height: calc(100vh - 99px);
+  }
+  min-height: 100%;
 `
+const GradientDiv = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+      background: rgba(0,0,0,.3);
+
+  
+  @media (max-width: 768px) {
+    background: rgba(0,0,0,.3)
+  ;
+  }
+  z-index: 0;
+`;
 export default function Ecosystem(){
     var [collapse, setCollapse] = useState(false)
     return(
         <>
-        <Container fluid  style={{  overflowX:'hidden', overflowY: 'hidden', zIndex: '-1', padding: '0px'}}>
+        <EcoContainer fluid  style={{  overflowX:'hidden', overflowY: 'hidden', zIndex: '1', padding: '0px'}}>
         <a id='ecosystem' style=
         {{position:'relative',
         top: '-200px'}}
     />
-            <Row style={{ color:'#fef9ef', minHeight:'400px', height:'calc(90vh - 99px)', position:'absolute', padding: '20px', background: 'rgba(0,0,0,.4)', width:'105%'}}>
-        <Col  md='6' style={{paddingTop:'15vw'}}>
-        <OrangeHeader>3. Georgia’s unique ecosystems are under threat.</OrangeHeader>
+            <Row style={{ color:'#fef9ef', minHeight:'400px',  position:'relative', padding: '5em 0em 0em', width:'100%'}}>
+        <Col  md='6' style={{marginLeft: '15px'}} >
+        <OrangeHeader>2. Georgia’s unique ecosystems are under threat.</OrangeHeader>
         <p>
         Georgia is home to species found nowhere else.
 
@@ -49,6 +70,10 @@ export default function Ecosystem(){
         These changes threaten the ability of our natural systems to provide clean water, protect us from storms, store carbon, and provide recreational opportunities.
 
         </p>
+        <MoreInfo>
+            <h6>Information about this video</h6>
+            <p>This video shows a forest of longleaf pine, a tree endemic to the southeast's coastal regions.</p>
+        </MoreInfo>
 </Col>
 <Col md='3' />
 
@@ -60,12 +85,13 @@ export default function Ecosystem(){
 
 
         <BackgroundContainer>
+        <GradientDiv />
         <AutoVideo autoPlay muted loop >
                 <source src="wp-content/themes/licenseplate/assets/video/pines.mp4" type="video/mp4" />
             </AutoVideo>
         </BackgroundContainer>
             
-        </Container>
+        </EcoContainer>
         
                 </>
     )
