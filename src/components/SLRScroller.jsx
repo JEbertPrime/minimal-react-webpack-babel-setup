@@ -32,7 +32,7 @@ export default function SLRScroller(props) {
   })
   return (
     <>
-      <Row className='slr-graphic' style={{ backgroundImage: `url('wp-content/themes/licenseplate/assets/images/layer_${level%7}.png')`, backgroundSize: 'cover', height: 'calc(60vh - 99px)', backgroundPosition: 'center center' }}>
+      <Row className='slr-graphic' style={{ backgroundImage: `url('wp-content/themes/licenseplate-2021/assets/images/layer_${level%7}.png')`, backgroundSize: 'cover', height: 'calc(60vh - 99px)', backgroundPosition: 'center center' }}>
 
         <Col style={{ padding: '0px' }}>
         <div >

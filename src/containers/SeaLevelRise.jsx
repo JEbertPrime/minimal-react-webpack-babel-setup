@@ -85,7 +85,7 @@ export default function SeaLevelRise(props) {
 }}>
           {[0, 1, 2, 3, 4, 5, 6].map((i) => (
             <img
-              src={`wp-content/themes/licenseplate/assets/images/layer_${i}.png`}
+              src={`wp-content/themes/licenseplate-2021/assets/images/layer_${i}.png`}
               alt={`Sea level rise of ${i} feet in Savannah, GA`}
               style={{
                 position: 'absolute',

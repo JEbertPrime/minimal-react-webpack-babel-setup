@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
 
-    path: path.resolve(__dirname, '../licenseplate/js'),
+    path: path.resolve(__dirname, '../licenseplate-2021/js'),
     filename: 'bundle.js',
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],

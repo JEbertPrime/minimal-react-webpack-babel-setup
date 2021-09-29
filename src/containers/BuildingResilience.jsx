@@ -33,7 +33,7 @@ const GradientDiv = styled.div`
 `;
 export default function CuttingEmissions() {
   return (
-    <Container fluid style={{ backgroundColor: 'white', backgroundImage:'url(wp-content/themes/licenseplate/assets/images/resilient.jpg)', backgroundSize:'cover', marginTop:'-6px',backgroundPosition: 'center' , position:'relative'}}>
+    <Container fluid style={{ backgroundColor: 'white', backgroundImage:'url(wp-content/themes/licenseplate-2021/assets/images/resilient.jpg)', backgroundSize:'cover', marginTop:'-6px',backgroundPosition: 'center' , position:'relative'}}>
     <a id='emissions' style=
         {{position:'relative',
         top: '-200px'}}

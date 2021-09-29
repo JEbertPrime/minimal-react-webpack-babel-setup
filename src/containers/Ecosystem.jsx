@@ -87,7 +87,7 @@ export default function Ecosystem(){
         <BackgroundContainer>
         <GradientDiv />
         <AutoVideo autoPlay muted loop >
-                <source src="wp-content/themes/licenseplate/assets/video/pines.mp4" type="video/mp4" />
+                <source src="wp-content/themes/licenseplate-2021/assets/video/pines.mp4" type="video/mp4" />
             </AutoVideo>
         </BackgroundContainer>
             

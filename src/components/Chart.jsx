@@ -42,7 +42,7 @@ var customBase = document.createElement('custom');
 // ctx.fillRect(0, 0, width, height);
 
 // Load external data and boot
-    Promise.all([d3.json("/wp-content/themes/licenseplate/assets/data/simpler.geojson"), d3.json('/wp-content/themes/licenseplate/assets/data/ride_collection_5s.geojson')]).then( function([roads, ride]){
+    Promise.all([d3.json("/wp-content/themes/licenseplate-2021/assets/data/simpler.geojson"), d3.json('/wp-content/themes/licenseplate-2021/assets/data/ride_collection_5s.geojson')]).then( function([roads, ride]){
       // initialize the path
       setRoadData(roads)
       

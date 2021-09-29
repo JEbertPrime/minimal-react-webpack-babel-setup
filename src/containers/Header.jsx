@@ -27,7 +27,7 @@ const Sticky = styled.div`
   padding-top:20px;
   padding-bottom:25px;
   background: white;
-  z-index: 10;
+  z-index: 100;
   overflow-x: hidden;
   overflow-y: hidden;
 `;

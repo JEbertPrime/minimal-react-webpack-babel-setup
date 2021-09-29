@@ -90,7 +90,7 @@ export default function CuttingEmissions() {
       <BackgroundContainer>
         <GradientDiv />
         <AutoVideo autoPlay muted loop >
-                <source src="wp-content/themes/licenseplate/assets/video/drone.mp4" type="video/mp4" />
+                <source src="wp-content/themes/licenseplate-2021/assets/video/drone.mp4" type="video/mp4" />
             </AutoVideo>
         </BackgroundContainer>
     </Container>
